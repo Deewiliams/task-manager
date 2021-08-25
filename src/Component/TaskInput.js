@@ -1,18 +1,19 @@
 import React, { useContext, useState } from "react";
-import { TaskListContext } from "../context/TaskListContext";
+import { TaskListContext } from "../Context/TaskListContext";
 
 export const TaskInput = () => {
-  const [addTask] = useContext(TaskListContext);
+  const [,addTask,clearList] = useContext(TaskListContext);
   const [title, setTitle] = useState("");
 
   const handleChange = (event) => {
     setTitle(event.target.value);
-    console.log(title);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTask(title)
+    addTask(title);
+    setTitle("")
+  
   };
   return (
     <form
@@ -34,7 +35,7 @@ export const TaskInput = () => {
         >
           Add Task
         </button>
-        <button className="bg-red-600 text-sm h-6 md:h-10 md:w-24  w-20 md:ml-52 rounded-md">
+        <button onClick={clearList} className="bg-red-600 text-sm h-6 md:h-10 md:w-24  w-20 md:ml-52 rounded-md">
           Clear
         </button>
       </div>

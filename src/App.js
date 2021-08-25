@@ -1,15 +1,15 @@
-import './App.css';
-import { TaskList } from './component/TaskList';
-import {TaskInput } from './component/TaskInput'
-import {TaskListContextProvider} from './context/TaskListContext'
+import "./App.css";
+import { TaskList } from "./Component/TaskList";
+import { TaskInput } from "./Component/TaskInput";
+import { TaskListContextProvider } from "./Context/TaskListContext";
 
 function App() {
   return (
     <TaskListContextProvider>
-    <div className="App">
-      <TaskInput />
-    <TaskList />
-    </div>
+      <div className="App">
+        <TaskInput />
+        <TaskList />
+      </div>
     </TaskListContextProvider>
   );
 }
