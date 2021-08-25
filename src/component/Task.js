@@ -1,16 +1,19 @@
-import React from 'react'
-import {TaskList} from './TaskList'
-import {Title} from './Title'
+import React from "react";
 
-export const Task = () => {
-    return (
-        <div className="bg-gray-100 w-60 md:w-2/3 m-auto mt-10 border-2">
-            <div className="p-2">
-                <Title />
-                <TaskList 
-                
-                />
-            </div>
-        </div>
-    )
-}
+export const Task = ({task}) => {
+  return (
+    <div className="flex flex-row items-center justify-between m-auto">
+      <h1 className="text-sm text-center md:text-lg lg:text-xl">
+        {task.title} 
+      </h1>
+      <div className="space-x-3">
+        <button>
+          <i className="fas fa-trash-alt"></i>
+        </button>
+        <button>
+          <i className="fas fa-pen"></i>
+        </button>
+      </div>
+    </div>
+  );
+};
