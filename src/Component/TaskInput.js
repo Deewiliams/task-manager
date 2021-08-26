@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { TaskListContext } from "../Context/TaskListContext";
 
 export const TaskInput = () => {
-  const [,addTask,clearList] = useContext(TaskListContext);
+  const [, addTask,clearList] = useContext(TaskListContext);
   const [title, setTitle] = useState("");
 
   const handleChange = (event) => {
