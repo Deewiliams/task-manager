@@ -2,7 +2,7 @@ import React, { useContext, useState,useEffect} from "react";
 import { TaskListContext } from "../Context/TaskListContext";
 
 export const TaskInput = () => {
-  const [, addTask, , clearList, , , editItem, , , ,editTask] = useContext(TaskListContext);
+  const [, addTask, , clearList, , , editItem,editTask] = useContext(TaskListContext);
   const [title, setTitle] = useState("");
 
   const handleChange = (event) => {
@@ -22,7 +22,6 @@ export const TaskInput = () => {
   useEffect(() => {
     if(editItem !== null) {
       setTitle(editItem.title);
-      console.log(editItem);
     }else {
       setTitle("");
     }
